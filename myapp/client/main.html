@@ -1,0 +1,24 @@
+<head>
+  <title>OpenSpace Storage</title>
+</head>
+
+<body>
+  <h1>Welcome to OpenSpace!</h1>
+  <img id="TokenImage" src="/images/OpenSpaceLogo.png" height="auto" width="20%" style="text-align: center; position: absolute; top: 40px; left: 40%; opacity: 0.5;">
+  {{> hello}}
+  {{> info}}
+</body>
+
+<template name="hello">
+  <button>Sign Up</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="info">
+  <br>
+  <h2>What Is OpenSpace?</h2>
+  <ul>
+    <li>OpenSpace is the place for Duke students to connect and find local, cheap summer storage.</li>
+    <li>Whether you have extra space in your home that you want to get paid for filling, or need a place to store your stuff, OpenSpace is your place.</li>
+  </ul>
+</template>
