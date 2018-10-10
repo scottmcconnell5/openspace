@@ -16,7 +16,7 @@ Template.hostTemplate.helpers({
 	},
 });
 
-Template.body.events({
+Template.hostTemplate.events({
 	'click button'(event, instance) {
 		debugger;
 		switch (event.target.id) {
