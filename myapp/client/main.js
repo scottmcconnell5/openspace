@@ -11,27 +11,23 @@ Template.hostTemplate.onCreated(function helloOnCreated() {
 });
 
 Template.hostTemplate.helpers({
+	hosts: function() {
+		return Hosts.find();
+	},
 	counter() {
 		return Template.instance().counter.get();
 	},
 });
 
 Template.hostTemplate.events({
-	'click button'(event, instance) {
+	'click #HostInfoSubmit': function(event, instance) {
 		debugger;
-		switch (event.target.id) {
-			case "HostInfoSubmit":
-				console.log("Clicked");
-				var firstName = event.target.title.value;
-				Hosts.insert({
-					firstName: firstName,
-					createdAt: new Date()
-				});
-				return false;
-				break; 
-			case "searchBarButton":
-				return false;
-				break;
-		}
+		console.log("Clicked");
+		var firstName = event.target.title.value;
+		Hosts.insert({
+			firstName: firstName,
+			createdAt: new Date()
+		});
+		return false;
 	},
 });
