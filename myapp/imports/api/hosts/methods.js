@@ -2,14 +2,14 @@
 
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import { Links } from './links.js';
+import { Hosts } from './hosts.js';
 
 Meteor.methods({
-  'links.insert'(title, url) {
+  'hosts.insert'(title, url) {
     check(url, String);
     check(title, String);
 
-    return Links.insert({
+    return Hosts.insert({
       url,
       title,
       createdAt: new Date(),
