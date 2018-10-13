@@ -6,11 +6,11 @@ Template.info.onCreated(function () {
   Meteor.subscribe('hosts.all');
 });
 
-Template.info.helpers({
-  hosts() {
-    return Hosts.find({});
-  },
-});
+// Template.info.helpers({
+//   hosts() {
+//     return Hosts.find({});
+//   },
+// });
 
 Template.info.events({
   'submit .info-link-add'(event) {
