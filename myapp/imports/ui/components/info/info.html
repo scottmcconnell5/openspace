@@ -1,15 +1,18 @@
 <template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li>
-      <form class="info-link-add">
-        <input type="text" name="title" placeholder="Title" required>
-        <input type="url" name="url" placeholder="Url" required>
-        <input type="submit" name="submit" value="Add new link">
+  <div class="container">
+    <header>
+      <h1>Hosts</h1>
+
+      <form class="new-host">
+        <input type="text" name="title" placeholder="First Name">
+        <input type="submit" value="Submit">
       </form>
-    </li>
-    {{#each links}}
-      <li><a href="{{url}}" target="_blank">{{title}}</a></li>
-    {{/each}}
-  </ul>
+    </header>
+    <ul>
+      {{#each hosts}}
+        {{> host}}
+      {{/each}}
+    </ul>
+  </div>
+  <li>{{title}}</li>
 </template>
