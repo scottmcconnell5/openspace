@@ -1,21 +1,4 @@
 <template name="hello">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">OpenSpace</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search" placeholder="Find space near you" aria-label="Find space near you">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchBarButton">Search</button>
-				</form>
-			</ul>
-			<a class="nav-link disabled" href="/BecomeAHost" id="aboutIcon">About</a>
-		</div>
-	</nav>
-
 	<div class="modal-body row">
 		<div class="col-md-6">
 			<!-- Your first column here -->
@@ -179,4 +162,40 @@
 			</script>
 		</div>
 	</div>
+</template>
+
+<template name ="navbar">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">OpenSpace</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Find space near you" aria-label="Find space near you">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchBarButton">Search</button>
+				</form>
+			</ul>
+			<a class="nav-link disabled" href="/BecomeAHost">About</a>
+		</div>
+	</nav>
+</template>
+
+<template name = "list_items">
+	<ol>
+	<!--
+	<div class="modal-body row">
+		<div class="col-md-6">
+			<ul class="list-group"> -->
+				{{#each hostsList}}
+					<li>
+						{{this}}
+					</li>
+				{{/each}}<!--
+			</ul>
+		</div>
+	</div> -->
+	</ol>
 </template>

@@ -1,14 +1,25 @@
-import { Hosts } from '/imports/api/hosts/hosts.js';
-import { Meteor } from 'meteor/meteor';
-
 import './hello.html';
 
+Hosts = new Meteor.Collection('hosts')
+
 Template.hello.onCreated(function helloOnCreated() {
-	Meteor.subscribe('hosts.all');
+  // counter starts at 0
+  this.counter = new ReactiveVar(0);
 });
 
-// Template.hello.helpers({
-//   hosts() {
-//     return Hosts.find({});
-//   },
-// });
+Template.hello.helpers({
+  counter() {
+    return Template.instance().counter.get();
+  },
+});
+
+Template.hello.events({
+  'click button'(event, instance) {
+    // increment the counter when button is clicked
+    instance.counter.set(instance.counter.get() + 1);
+  },
+});
+
+Template.list_items.hostsList = function(){
+	return Hosts.find();
+}
