@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import './info.html';
 
 Template.info.onCreated(function () {
-  Meteor.subscribe('hosts.all');
+	Meteor.subscribe('hosts.all');
 });
 
 // Template.info.helpers({
@@ -32,20 +32,29 @@ Template.info.onCreated(function () {
 // });
 
 Template.info.events({
-  'submit .new-host': function(event) {
-    debugger;
+	'submit .new-host': function(event) {
 
-    var firstName = event.target.firstName.value;
-    var lastName = event.target.lastName.value;
+		debugger;
+		var firstName = event.target.firstName.value;
+		var lastName = event.target.lastName.value;
+		var street = event.target.street.value;
+		var city = event.target.city.value;
+		var state = event.target.state.value;
+		var zip = event.target.zip.value;
+		var phone = event.target.phone.value;
 
-    Meteor.call('hosts.insert', firstName, lastName, (error) => {
-      if (error) {
-        alert(error.error);
-      }
-    });
+		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, phone, (error) => {
+				if (error) {
+					alert(error.error);
+				}
+			});
 
-    event.target.firstName.value = "";
-    event.target.lastName.value = "";
-
-  },
+			event.target.firstName.value = "";
+			event.target.lastName.value = "";
+			event.target.street.value = "";
+			event.target.city.value = "";
+			event.target.state.value = "";
+			event.target.zip.value = "";
+			event.target.phone.value = "";
+	},
 });
