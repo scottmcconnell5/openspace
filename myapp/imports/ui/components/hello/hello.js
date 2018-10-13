@@ -1,6 +1,5 @@
 import './hello.html';
-
-Hosts = new Meteor.Collection('hosts')
+import { Hosts } from '/imports/api/hosts/hosts.js';
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
@@ -20,6 +19,12 @@ Template.hello.events({
   },
 });
 
-Template.list_items.hostsList = function(){
-	return Hosts.find();
-}
+Template.list_items.onCreated(function list_itemsOnCreated(){
+  Meteor.subscribe('hosts.all');
+});
+
+Template.list_items.helpers({
+  hosts() {
+    return Hosts.find({});
+  }
+});

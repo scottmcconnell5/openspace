@@ -183,18 +183,21 @@
 	</nav>
 </template>
 
-<template name = "list_items">
+<template name="list_items">
 	<ol>
 	<!--
 	<div class="modal-body row">
 		<div class="col-md-6">
-			<ul class="list-group"> -->
-				{{#each hostsList}}
+			<`ul class="list-group"> -->
+				<!-- {{#each hostsList}}
 					<li>
-						{{this}}
+						{{firstName}}
 					</li>
-				{{/each}}<!--
-			</ul>
+				{{/each}} -->
+			{{#each hosts}}
+				<li>{{title}}</li>
+			{{/each}}
+			<!--</ul>
 		</div>
 	</div> -->
 	</ol>
