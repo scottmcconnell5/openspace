@@ -12,14 +12,3 @@ Template.hello.onCreated(function helloOnCreated() {
 //     return Hosts.find({});
 //   },
 // });
-
-Template.hello.events({
-	'click button'(event, instance) {
-		debugger;
-		Meteor.call('hosts.insert', "Scott", "Todzo", (error) => {
-			if (error) {
-				alert(error.error);
-			}
-		});
-	},
-});
