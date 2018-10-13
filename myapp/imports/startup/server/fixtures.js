@@ -6,25 +6,16 @@ import { Hosts } from '../../api/hosts/hosts.js';
 Meteor.startup(() => {
   // if the Hosts collection is empty
   if (Hosts.find().count() === 0) {
+    debugger;
     const data = [
       {
-        title: 'Do the Tutorial',
-        url: 'https://www.meteor.com/try',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Follow the Guide',
-        url: 'http://guide.meteor.com',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Read the Docs',
-        url: 'https://docs.meteor.com',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Discussions',
-        url: 'https://forums.meteor.com',
+        firstName: 'Scott',
+        lastName: 'McConnell',
+        street: '1262 Farm Road',
+        city: 'Berwyn',
+        state: 'Pennsylvania',
+        zip: '19312',
+        phone: '6103124662',
         createdAt: new Date(),
       },
     ];
