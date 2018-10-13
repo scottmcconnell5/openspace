@@ -5,13 +5,13 @@ import { check } from 'meteor/check';
 import { Hosts } from './hosts.js';
 
 Meteor.methods({
-  'hosts.insert'(title, url) {
-    check(url, String);
-    check(title, String);
+  'hosts.insert'(firstName, lastName) {
+    check(lastName, String);
+    check(firstName, String);
 
     return Hosts.insert({
-      url,
-      title,
+      lastName,
+      firstName,
       createdAt: new Date(),
     });
   },

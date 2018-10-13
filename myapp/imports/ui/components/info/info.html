@@ -4,15 +4,11 @@
       <h1>Hosts</h1>
 
       <form class="new-host">
-        <input type="text" name="title" placeholder="First Name">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
         <input type="submit" value="Submit">
       </form>
     </header>
-    <ul>
-      {{#each hosts}}
-        {{> host}}
-      {{/each}}
-    </ul>
   </div>
   <li>{{title}}</li>
 </template>

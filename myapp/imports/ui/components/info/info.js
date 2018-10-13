@@ -35,14 +35,17 @@ Template.info.events({
   'submit .new-host': function(event) {
     debugger;
 
-    var firstName = event.target.title.value;
+    var firstName = event.target.firstName.value;
+    var lastName = event.target.lastName.value;
 
-    Meteor.call('hosts.insert', firstName, "Johnson", (error) => {
+    Meteor.call('hosts.insert', firstName, lastName, (error) => {
       if (error) {
         alert(error.error);
       }
     });
 
-    event.target.title.value = "";
+    event.target.firstName.value = "";
+    event.target.lastName.value = "";
+
   },
 });
