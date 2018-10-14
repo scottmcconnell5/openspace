@@ -17,6 +17,7 @@ Meteor.startup(() => {
         zip: '19312',
         email: 'skm44@duke.edu',
         phone: '6103124662',
+        spaceType: 'Garage',
         createdAt: new Date(),
       },
       {
@@ -28,6 +29,7 @@ Meteor.startup(() => {
         zip: '27705',
         email: 'jrf36@duke.edu',
         phone: '9802146075',
+        spaceType: 'Shed',
         createdAt: new Date(),
       },
       {
@@ -39,6 +41,7 @@ Meteor.startup(() => {
         zip: '27705',
         email: 'sa280@duke.edu',
         phone: '2486335250',
+        spaceType: 'Closet',
         createdAt: new Date(),
       },
     ];
