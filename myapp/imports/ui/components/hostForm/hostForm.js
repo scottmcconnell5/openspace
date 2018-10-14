@@ -1,19 +1,20 @@
 import { Hosts } from '/imports/api/hosts/hosts.js';
 import { Meteor } from 'meteor/meteor';
-import './info.html';
+import './hostForm.html';
+import '/imports/ui/stylesheets/hostForm.css';
 
-Template.info.onCreated(function () {
+Template.hostForm.onCreated(function () {
 	Meteor.subscribe('hosts.all');
 });
 
-// Template.info.helpers({
+// Template.hostForm.helpers({
 //   hosts() {
 //     return Hosts.find({});
 //   },
 // });
 
-// Template.info.events({
-//   'submit .info-link-add'(event) {
+// Template.hostForm.events({
+//   'submit .hostForm-link-add'(event) {
 //     event.preventDefault();
 
 //     const target = event.target;
@@ -31,7 +32,7 @@ Template.info.onCreated(function () {
 //   },
 // });
 
-Template.info.events({
+Template.hostForm.events({
 	'submit .new-host': function(event) {
 
 		debugger;
@@ -41,9 +42,10 @@ Template.info.events({
 		var city = event.target.city.value;
 		var state = event.target.state.value;
 		var zip = event.target.zip.value;
+		var email = event.target.email.value;
 		var phone = event.target.phone.value;
 
-		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, phone, (error) => {
+		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, (error) => {
 				if (error) {
 					alert(error.error);
 				}
@@ -55,6 +57,7 @@ Template.info.events({
 			event.target.city.value = "";
 			event.target.state.value = "";
 			event.target.zip.value = "";
+			event.target.email.value = "";
 			event.target.phone.value = "";
 	},
 });
