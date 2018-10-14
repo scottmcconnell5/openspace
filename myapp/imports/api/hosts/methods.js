@@ -31,4 +31,22 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
+  // 'hosts.update'(firstName, newSpaceAvailable) {
+  //   check(newSpaceAvailable, String);
+  //   check(firstName, String);
+
+  //     'hosts.update'(firstName, newSpaceAvailable) {
+  //   check(newSpaceAvailable, String);
+  //   check(firstName, String);
+
+  //   return Hosts.update(
+  //     { firstName: firstName },
+  //     {
+  //       firstName: firstName,
+  //       spaceAvailable: newSpaceAvailable
+  //     },
+  //     {upsert: false }
+  //     )
+  //   });
+  // },
 });
