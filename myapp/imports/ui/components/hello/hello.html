@@ -188,7 +188,41 @@
 		<div class="col-md-6">
 			<ul class="list-group">
 			{{#each hosts}}
-				<li class="list-group-item">{{firstName}} {{lastName}}<br>{{street}}, {{city}}, {{state}} {{zip}} <br>{{email}} {{phone}}<br>{{spaceType}}</li>
+				<li class="list-group-item">
+					<div class="media">
+						<img class="mr-3" src="/images/SampleLayout1.png" alt="Generic placeholder image" style="width: 100px; height: 100px;">
+						<div class="media-body">
+							<h5 class="mt-0">{{firstName}}</h5>
+							<div class="container">
+								<div class="row">
+									<div class="col-sm">
+										<i class="fas fa-map-marked-alt"></i> {{street}}
+									</div>
+									<div class="col-sm">
+										<i class="fas fa-home"></i> {{spaceType}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm">
+										<i class="fas fa-dollar-sign"></i> .06$/sqInch
+									</div>
+									<div class="col-sm">
+										<i class="fas fa-clock"></i> 8:00AM - 12:00PM (Monday-Friday)
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm">
+										<i class="fas fa-adjust"></i> 80sqft remaining
+									</div>
+									<div class="col-sm">
+										<i class="fas fa-check-circle"></i> OpenSpace Verified
+									</div>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn btn-primary">Book</button>
+					</div>
+				</li>
 			{{/each}}
 			</ul>
 		</div>
