@@ -44,8 +44,9 @@ Template.hostForm.events({
 		var zip = event.target.zip.value;
 		var email = event.target.email.value;
 		var phone = event.target.phone.value;
+		var spaceType = event.target.spaceType.value;
 
-		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, (error) => {
+		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, spaceType, (error) => {
 				if (error) {
 					alert(error.error);
 				}
@@ -59,5 +60,6 @@ Template.hostForm.events({
 			event.target.zip.value = "";
 			event.target.email.value = "";
 			event.target.phone.value = "";
+			event.target.spaceType.value = "";
 	},
 });

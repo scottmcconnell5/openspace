@@ -5,8 +5,10 @@ import { check } from 'meteor/check';
 import { Hosts } from './hosts.js';
 
 Meteor.methods({
-  'hosts.insert'(firstName, lastName, street, city, state, zip, phone) {
+  'hosts.insert'(firstName, lastName, street, city, state, zip, email, phone, spaceType) {
+    check(spaceType, String);
     check(phone, String);
+    check(email, String);
     check(zip, String);
     check(state, String);
     check(city, String);
@@ -15,13 +17,15 @@ Meteor.methods({
     check(firstName, String);
 
     return Hosts.insert({
-      phone,
-      zip,
-      state,
-      city,
-      street,
-      lastName,
       firstName,
+      lastName,
+      street,
+      city,
+      state,
+      zip,
+      email,
+      phone,
+      spaceType,
       createdAt: new Date(),
     });
   },
