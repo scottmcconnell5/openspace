@@ -1,0 +1,12 @@
+.checkbox_container {
+  float: right;
+  margin: left 20%;
+  /*content:"*" ;
+  color:red   
+*/}
+
+h1 {
+    color: blue;
+    font-family: calibri;
+    font-size: 300%;
+}
