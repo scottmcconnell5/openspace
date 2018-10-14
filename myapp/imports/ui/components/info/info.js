@@ -41,9 +41,10 @@ Template.info.events({
 		var city = event.target.city.value;
 		var state = event.target.state.value;
 		var zip = event.target.zip.value;
+		var email = event.target.email.value;
 		var phone = event.target.phone.value;
 
-		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, phone, (error) => {
+		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, (error) => {
 				if (error) {
 					alert(error.error);
 				}
@@ -55,6 +56,7 @@ Template.info.events({
 			event.target.city.value = "";
 			event.target.state.value = "";
 			event.target.zip.value = "";
+			event.target.email.value = "";
 			event.target.phone.value = "";
 	},
 });
