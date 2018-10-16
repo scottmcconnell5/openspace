@@ -18,35 +18,26 @@ Meteor.methods({
     check(firstName, String);
 
     return Hosts.insert({
-      firstName,
-      lastName,
-      street,
-      city,
-      state,
-      zip,
-      email,
-      phone,
-      spaceType,
-      spaceAvailable,
+      firstName: firstName,
+      lastName: lastName,
+      street: street,
+      city: city,
+      state: state,
+      zip: zip,
+      email: email,
+      phone: phone,
+      spaceType: spaceType,
+      spaceAvailable: spaceAvailable,
       createdAt: new Date(),
     });
   },
-  // 'hosts.update'(firstName, newSpaceAvailable) {
-  //   check(newSpaceAvailable, String);
-  //   check(firstName, String);
 
-  //     'hosts.update'(firstName, newSpaceAvailable) {
-  //   check(newSpaceAvailable, String);
-  //   check(firstName, String);
+  'hosts.updateSpaceAvailable'(amount) {
+    check(amount, Number);
 
-  //   return Hosts.update(
-  //     { firstName: firstName },
-  //     {
-  //       firstName: firstName,
-  //       spaceAvailable: newSpaceAvailable
-  //     },
-  //     {upsert: false }
-  //     )
-  //   });
-  // },
+    Hosts.update({ firstName: "Samir" }, 
+      { $set: { spaceAvailable: parseFloat(amount)  } }
+    )
+  }
+
 });

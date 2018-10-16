@@ -34,8 +34,6 @@ Template.hostForm.onCreated(function () {
 
 Template.hostForm.events({
 	'submit .new-host': function(event) {
-
-		debugger;
 		var firstName = event.target.firstName.value;
 		var lastName = event.target.lastName.value;
 		var street = event.target.street.value;
@@ -48,10 +46,10 @@ Template.hostForm.events({
 		var spaceAvailable = event.target.spaceAvailable.value;
 
 		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, spaceType, spaceAvailable, (error) => {
-				if (error) {
-					alert(error.error);
-				}
-			});
+			if (error) {
+				alert(error.error);
+			}
+		});
 
 			event.target.firstName.value = "";
 			event.target.lastName.value = "";
@@ -63,5 +61,8 @@ Template.hostForm.events({
 			event.target.phone.value = "";
 			event.target.spaceType.value = "";
 			event.target.spaceAvailable.value = "";
+		debugger;
+		console.log(window.location.host);
+		window.location = window.location.origin;
 	},
 });
