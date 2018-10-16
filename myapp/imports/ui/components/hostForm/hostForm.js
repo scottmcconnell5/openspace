@@ -46,10 +46,10 @@ Template.hostForm.events({
 		var spaceAvailable = event.target.spaceAvailable.value;
 
 		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, spaceType, spaceAvailable, (error) => {
-				if (error) {
-					alert(error.error);
-				}
-			});
+			if (error) {
+				alert(error.error);
+			}
+		});
 
 			event.target.firstName.value = "";
 			event.target.lastName.value = "";

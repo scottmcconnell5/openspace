@@ -12,12 +12,12 @@ Template.bookForm.events({
 		debugger;
 		var spaceAmnt = event.target.spaceAmnt.value;
 
-		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, spaceType, spaceAvailable, (error) => {
-				if (error) {
-					alert(error.error);
-				}
-			});
+		Meteor.call('hosts.updateSpaceAvailable', Number(spaceAmnt), (error) => {
+			if (error) {
+				alert(error.error);
+			}
+		});
 
-			event.target.spaceAmnt.value = "";
+		event.target.spaceAmnt.value = "";
 	},
 });
