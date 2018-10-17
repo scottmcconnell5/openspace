@@ -1,11 +1,15 @@
 .checkbox_container {
   float: right;
-  margin: left 20%;
-  /*content:"*" ;
-  color:red   */
 }
-
-h1 {
+.checkbox_container:after {
+	content:" *"; 
+	color: red;
+}
+.required:before { 
+	content:" *"; 
+	color: red;
+}
+#host-form-title {
     color: blue;
     font-family: calibri;
     font-size: 300%;

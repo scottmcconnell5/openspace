@@ -8,11 +8,11 @@ Template.bookForm.onCreated(function () {
 
 Template.bookForm.events({
 	'submit .new-booking': function(event) {
-
 		debugger;
-		var spaceAmnt = event.target.spaceAmnt.value;
 
-		Meteor.call('hosts.updateSpaceAvailable', Number(spaceAmnt), (error) => {
+		var spaceAmnt = parseFloat(event.target.spaceAmnt.value);
+
+		Meteor.call('hosts.updateSpaceAvailable', spaceAmnt, (error) => {
 			if (error) {
 				alert(error.error);
 			}
