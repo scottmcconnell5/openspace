@@ -13,24 +13,6 @@ Template.hostForm.onCreated(function () {
 //   },
 // });
 
-// Template.hostForm.events({
-//   'submit .hostForm-link-add'(event) {
-//     event.preventDefault();
-
-//     const target = event.target;
-//     const title = target.title;
-//     const url = target.url;
-
-//     Meteor.call('hosts.insert', title.value, url.value, (error) => {
-//       if (error) {
-//         alert(error.error);
-//       } else {
-//         title.value = '';
-//         url.value = '';
-//       }
-//     });
-//   },
-// });
 
 Template.hostForm.events({
 	'submit .new-host': function(event) {
@@ -43,26 +25,31 @@ Template.hostForm.events({
 		var email = event.target.email.value;
 		var phone = event.target.phone.value;
 		var spaceType = event.target.spaceType.value;
-		var spaceAvailable = event.target.spaceAvailable.value;
+		var spaceAvailable = parseFloat(event.target.spaceAvailable.value);
+		var termsAccepted = $("input[name='termsAccepted']").is(":checked");
 
-		Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, spaceType, spaceAvailable, (error) => {
-			if (error) {
-				alert(error.error);
-			}
-		});
+		if (firstName && lastName && street && city && state && zip && email && phone && spaceType && spaceAvailable && termsAccepted) {
 
-			event.target.firstName.value = "";
-			event.target.lastName.value = "";
-			event.target.street.value = "";
-			event.target.city.value = "";
-			event.target.state.value = "";
-			event.target.zip.value = "";
-			event.target.email.value = "";
-			event.target.phone.value = "";
-			event.target.spaceType.value = "";
-			event.target.spaceAvailable.value = "";
-		debugger;
-		console.log(window.location.host);
-		window.location = window.location.origin;
+			Meteor.call('hosts.insert', firstName, lastName, street, city, state, zip, email, phone, spaceType, spaceAvailable, (error) => {
+				if (error) {
+					alert(error.error);
+				}
+			});
+
+				event.target.firstName.value = "";
+				event.target.lastName.value = "";
+				event.target.street.value = "";
+				event.target.city.value = "";
+				event.target.state.value = "";
+				event.target.zip.value = "";
+				event.target.email.value = "";
+				event.target.phone.value = "";
+				event.target.spaceType.value = "";
+				event.target.spaceAvailable.value = "";
+
+		} else {
+			alert('Please fill out all required fields before submitting');
+			return false;
+		}
 	},
 });

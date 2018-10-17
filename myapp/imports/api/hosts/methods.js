@@ -5,8 +5,8 @@ import { check } from 'meteor/check';
 import { Hosts } from './hosts.js';
 
 Meteor.methods({
-  'hosts.insert'(firstName, lastName, street, city, state, zip, email, phone, spaceType, spaceAvailable) {
-    check(spaceAvailable, String);
+  'hosts.insert'(firstName, lastName, street, city, state, zip, email, phone, spaceType, spaceAvailable, termsAccepted) {
+    check(spaceAvailable, Number);
     check(spaceType, String);
     check(phone, String);
     check(email, String);
@@ -36,7 +36,7 @@ Meteor.methods({
     check(amount, Number);
 
     Hosts.update({ firstName: "Samir" }, 
-      { $set: { spaceAvailable: parseFloat(amount)  } }
+      { $inc: { spaceAvailable: -amount  } }
     )
   }
 

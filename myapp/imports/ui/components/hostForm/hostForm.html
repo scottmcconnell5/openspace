@@ -2,32 +2,42 @@
 	<div class="container">
 		<header>
 			<br>
-			<h1>Become a Host</h1>
-			<br>
+			<h1 id="host-form-title">Become a Host</h1>
 			<form class="new-host">
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="firstName" placeholder="First Name">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="lastName" placeholder="Last Name">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="street" placeholder="Street Address">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="city" placeholder="City">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="state" placeholder="State">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="zip" placeholder="Zip Code">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="email" placeholder="Email Address">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="phone" placeholder="Phone Number">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="spaceType" placeholder="Type of Space (Garage, Closet, etc.)">
-				<br>
-				<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="spaceAvailable" placeholder="Space Available (in square feet)">
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="firstName" placeholder="First Name">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="lastName" placeholder="Last Name">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="street" placeholder="Street Address">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="city" placeholder="City">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="state" placeholder="State">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="zip" placeholder="Zip Code">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="email" placeholder="Email Address">
+				</div>
+				<div class="required">
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="phone" placeholder="Phone Number">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="spaceType" placeholder="Type of Space (Garage, Closet, etc.)">
+				</div>
+				<div class="required"> 
+					<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" name="spaceAvailable" placeholder="Space Available (in square feet)">
+				</div>
 				<br>
 				<div class="checkbox_container">
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox" id="blankCheckbox" value="option1"> 
+						<input class="form-check-input" type="checkbox" id="blankCheckbox" name="termsAccepted"> 
 						<span class="custom-control-description">I agree to the OpenSpace <a href="https://docs.google.com/document/d/1OFSiaaVMH3tK4i9il-WKZA5pSKRYM9TBqL8ArS5tf_g/edit#heading=h.9afqyu86ca3f" target="_blank">Terms and Conditions</a></span>
 					</label>
 				</div>
